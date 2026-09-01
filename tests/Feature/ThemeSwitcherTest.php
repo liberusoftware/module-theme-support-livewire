@@ -10,26 +10,24 @@ use Livewire\Livewire;
  * themes at all.
  */
 
-test('theme switcher renders with default theme', function () {
+test('theme switcher renders with default theme', function (): void {
     Livewire::test(ThemeSwitcher::class)
         ->assertSet('currentTheme', 'default');
 });
 
-test('theme switcher can switch to dark theme', function () {
+test('theme switcher can switch to dark theme', function (): void {
     Livewire::test(ThemeSwitcher::class)
         ->call('switchTheme', 'dark')
         ->assertSet('currentTheme', 'dark');
 });
 
-test('theme switcher ignores unknown themes', function () {
+test('theme switcher ignores unknown themes', function (): void {
     Livewire::test(ThemeSwitcher::class)
         ->call('switchTheme', 'nonexistent')
         ->assertSet('currentTheme', 'default');
 });
 
-test('theme switcher loads available themes on mount', function () {
+test('theme switcher loads available themes on mount', function (): void {
     Livewire::test(ThemeSwitcher::class)
-        ->assertSet('availableThemes', function ($themes) {
-            return is_array($themes) && count($themes) > 0;
-        });
+        ->assertSet('availableThemes', fn ($themes): bool => is_array($themes) && count($themes) > 0);
 });
