@@ -3,7 +3,7 @@
   "name": "theme-support-livewire",
   "display_name": "Theme Support Livewire",
   "description": "Interactive theme selection for Livewire applications.",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "category": "presentation",
   "provider": "Liberu\\Foundation\\ThemeSupportLivewire\\ThemeSupportLivewireServiceProvider",
   "requires": {
